@@ -1,0 +1,17 @@
+.container{
+    width: 960px;
+    margin: 0px auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid;
+    justify-content: space-around;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
