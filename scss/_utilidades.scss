@@ -1,16 +1,18 @@
 * {
     position: relative;
-    z-index: 1;
+    box-sizing: border-box;
 }
 
 *::before, *::after {
     position: inherit;
+    box-sizing: inherit;
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     color:$glb-color-texto;
+    background-color: black;
 }
 
 .border__box{
