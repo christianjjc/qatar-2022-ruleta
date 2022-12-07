@@ -1,0 +1,10 @@
+
+/* Líneas de union de cuadros */
+/* $alto : 0px;
+@for $i from 1 through 8{
+    #ln_e1-#{$i}{
+        top: 50px + $alto;
+        $alto : $alto + 125px;
+    }
+} */
+

@@ -1,17 +1,82 @@
-.container{
-    width: 960px;
-    margin: 0px auto;
-}
+* {
+  position: relative;
+  z-index: 1; }
 
-.row{
-    display: flex;
-    flex-direction: row;
-    border: 1px solid;
-    justify-content: space-around;
-}
+*::before, *::after {
+  position: inherit; }
 
-.col{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #bdc1c6; }
+
+.border__box {
+  box-sizing: border-box; }
+
+.container {
+  width: 960px;
+  height: 100vh;
+  margin: 0px auto;
+  background-color: #1b1c1f;
+  z-index: 0; }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.row__titulo {
+  height: 50px; }
+
+.row__match {
+  background-color: #202124; }
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.col__titulo {
+  width: 100%;
+  text-align: center; }
+
+.match {
+  margin: 10px 0;
+  border: 0.5px solid #636465;
+  height: 100px;
+  width: 180px;
+  border-radius: 10px;
+  background-color: #202124;
+  cursor: pointer; }
+
+.lineas__match {
+  box-sizing: border-box;
+  background-color: #636465;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 65%;
+  height: 1px;
+  z-index: 0; }
+
+.lineas__match-b {
+  left: -15%;
+  width: 130%; }
+
+.txtMarcador {
+  border: 0px;
+  width: 20px;
+  text-align: center;
+  color: black; }
+
+.img__bandera {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  width: 24px;
+  height: 20px; }
+
+.div__bandera {
+  padding: 0 0 0 0;
+  width: 24px;
+  height: 20px; }
