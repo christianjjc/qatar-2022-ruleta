@@ -68,23 +68,6 @@ body {
   .match:hover {
     border-color: red; }
 
-.lineas__match {
-  box-sizing: border-box;
-  background-color: #636465;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 65%;
-  height: 1px; }
-
-.lineas__match-b {
-  left: -15%;
-  width: 130%; }
-
-.lineas__match-c {
-  left: -15%;
-  width: 60%; }
-
 .txtMarcador {
   border: 0px;
   width: 20px;
@@ -97,3 +80,33 @@ body {
   border-radius: 0;
   width: 24px;
   height: 20px; }
+
+.lineas__match {
+  box-sizing: border-box;
+  background-color: #636465;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 1px; }
+
+.lineas__match-b {
+  width: 50%; }
+
+.lineas__match-c {
+  width: 50%; }
+
+.flecha__match {
+  position: absolute;
+  width: 30px;
+  left: 101%;
+  background-color: #1b1c1f;
+  text-align: center;
+  border-radius: 2px; }
+
+.flechas__svg {
+  width: 100%;
+  height: 100%;
+  fill: #bdc1c6; }
+  .flechas__svg:hover {
+    width: 35px; }

@@ -1,3 +1,4 @@
+/** UTILIDADES */
 /** Ordenamos el Array de manea aleatoria para que nos muestre distintos partidos*/
 const shuffleArray = (array) => {
     for (let i = array.length -1; i > 0; i--) {
@@ -7,6 +8,33 @@ const shuffleArray = (array) => {
         array[j] = k;
       }
 }
+
+/**
+ * Devolverá el objeto que coincida con la llave-valor indicados como
+ * argumentos de la función.
+ */
+/* * @param String column    El nombre de la columna o llave de referencia
+ * @param Any value        El valor buscado sobre la columna indicada
+ * @return [Object|Null]   Devolverá null en caso de no hallar coincidencia, en caso contrario devolverá el objeto coincidente
+ */
+
+
+// Método Find => Devuelve el primer objeto que coincida con la condición
+//console.log(cursos.find(item => item.nombre === "React JS")); // Tendría que devolver un Object
+//console.log(cursos.find(item => item.precio <= 21000)); // Tendría que devolver un Object
+//console.log(cursos.find(item => (item.precio > 15000) && (item.precio <= 21000))); // Tendría que devolver un Object
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Clase para los Paises */
 class Pais {
@@ -111,24 +139,26 @@ const cargaPartidos = (elim, matches) => {
 shuffleArray(paises);
 cargaPartidos(1,8);
 
-/* 
-shuffleArray(paises);
-cargaPartidos(2,4);
-
-shuffleArray(paises);
-cargaPartidos(3,2);
-
-shuffleArray(paises);
-cargaPartidos(4,1);
-
- */
-
-
-let divMatchs = document.getElementsByClassName(`match`);
+/* Agregamos eventos a los div contenedores de cada encuentro */
+let divMatchs = document.getElementsByClassName(`flecha__match`);
 for (let i = 0; i < divMatchs.length; i++) {
     divMatchs[i].addEventListener(`click`,()=>{
         console.log(divMatchs[i].id);
     })
 }
+
+
+
+
+const devuelveDestino = (idMatch) => {
+    let matchDestino = matches.find((encuentro) => {
+        return (encuentro.eliminMatch == idMatch);
+    })
+    return matchDestino.destino;
+}
+
+devuelveDestino(`e2-3`);
+
+
 
 

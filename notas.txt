@@ -72,3 +72,22 @@ Partidos - match
 15  18/12/22
 
 
+
+
+
+// Método IndexOf
+/* const nombres = ["Daniela", "Julieta", "Alfa", "Nacho", "Marcos", "El Conejo"];
+console.log(nombres.indexOf("Marcos")); //4
+console.log(nombres.indexOf("Conejo")); //-1
+console.log(nombres.indexOf("julieta")); //-1 */
+
+
+
+// Método Find => Devuelve el primer objeto que coincida con la condición
+/* console.log(cursos.find(item => item.nombre === "React JS")); // Tendría que devolver un Object
+console.log(cursos.find(item => item.precio <= 21000)); // Tendría que devolver un Object
+console.log(cursos.find(item => (item.precio > 15000) && (item.precio <= 21000))); // Tendría que devolver un Object */
+
+// Método Filter => Devuelve un nuevo array resultante
+/* const resultado = cursos.filter(item => item.precio < 20000);
+console.log(resultado); */

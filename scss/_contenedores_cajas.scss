@@ -70,25 +70,3 @@
         border-color:red;
     }
 }
-
-.lineas__match{
-    box-sizing: border-box;
-    background-color: $glb-color-lineas-match;
-    //border: 1px solid #3c4043;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 65%;
-    height: 1px;
-}
-
-.lineas__match-b{
-    left: -15%;
-    width: 130%;
-}
-
-.lineas__match-c{
-    left: -15%;
-    width: 60%;
-}
-
