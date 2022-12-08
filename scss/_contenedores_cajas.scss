@@ -24,7 +24,7 @@
         width: 50%;
     }
     
-    .col_marcador_equipo{
+    .col__marcador__equipo{
         @extend .row;
         justify-content: center;
         width: 25%;
@@ -46,7 +46,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    border: 1px solid;
+    width: 25%;
+    border: 1px solid;
 }
+
+.col__match{
+    align-items:stretch;
+}
+
 
 .col__titulo{
     width: 100%;
@@ -76,7 +85,6 @@
     top: 50%;
     width: 65%;
     height: 1px;
-    //z-index: 0;
 }
 
 .lineas__match-b{

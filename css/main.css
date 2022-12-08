@@ -20,7 +20,7 @@ body {
   margin: 0px auto;
   background-color: #1b1c1f; }
 
-.row, .row .col__flag__equipo, .row .col__nomb__equipo, .row .col_marcador_equipo {
+.row, .row .col__flag__equipo, .row .col__nomb__equipo, .row .col__marcador__equipo {
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
@@ -31,7 +31,7 @@ body {
     justify-content: start;
     align-items: center;
     width: 50%; }
-  .row .col_marcador_equipo {
+  .row .col__marcador__equipo {
     justify-content: center;
     width: 25%; }
 
@@ -46,7 +46,14 @@ body {
 .col {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid;
+  width: 25%;
+  border: 1px solid; }
+
+.col__match {
+  align-items: stretch; }
 
 .col__titulo {
   width: 100%;
