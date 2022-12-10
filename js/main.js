@@ -126,37 +126,37 @@ const cargaPartidos = (elim, matches) => {
 shuffleArray(paises);
 cargaPartidos(1,8);
 
+
+/* Obtiene la ubicacion para el siguiente encuentro del ganador */
+const siguienteMatch = (idMatch) => {
+    console.log(idMatch.slice(5));
+    let encuentroDestino = matches.find(match => match.eliminMatch == idMatch.slice(5));
+    console.log(encuentroDestino.destino)
+    obtenGanadorYcolocalo(encuentroDestino.destino);
+}
+
+
 /* Agregamos eventos a los div contenedores de cada encuentro */
 let divMatchs = document.getElementsByClassName(`flecha__match`);
 for (let i = 0; i < divMatchs.length; i++) {
     divMatchs[i].addEventListener(`click`,()=>{
-        console.log(divMatchs[i].id);
+        siguienteMatch(divMatchs[i].id);
     })
 }
 
-const devuelveDestino = (idMatch) => {
-    let matchDestino = matches.find((encuentro) => {
-        return (encuentro.eliminMatch == idMatch);
-    })
-    return matchDestino.destino;
+//`e3-2-1`;
+//`e2-1-1`;
+
+const obtenGanadorYcolocalo = (encuentroDestino) => {
+    /* encontando al Ganador del encuentro */
+
+
+
+    /* Colocando en su lugar al ganador */
+    let idMatch = encuentroDestino.slice(1);
+    let eliminatoria = idMatch.slice(0,1); console.log(`eliminatoria ${eliminatoria}`);
+    let encuentro = idMatch.slice(2,3); console.log(`encuentro ${encuentro}`);
+    let posicion = idMatch.slice(4,5); console.log(`posicion ${posicion}`);
+    agregaBandera(eliminatoria, encuentro, posicion,0);
+    agregaNombre(eliminatoria, encuentro, posicion,0);
 }
-
-devuelveDestino(`e2-3`);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
