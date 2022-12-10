@@ -18,23 +18,10 @@ const shuffleArray = (array) => {
  * @return [Object|Null]   Devolverá null en caso de no hallar coincidencia, en caso contrario devolverá el objeto coincidente
  */
 
-
 // Método Find => Devuelve el primer objeto que coincida con la condición
 //console.log(cursos.find(item => item.nombre === "React JS")); // Tendría que devolver un Object
 //console.log(cursos.find(item => item.precio <= 21000)); // Tendría que devolver un Object
 //console.log(cursos.find(item => (item.precio > 15000) && (item.precio <= 21000))); // Tendría que devolver un Object
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Clase para los Paises */
 class Pais {
@@ -147,9 +134,6 @@ for (let i = 0; i < divMatchs.length; i++) {
     })
 }
 
-
-
-
 const devuelveDestino = (idMatch) => {
     let matchDestino = matches.find((encuentro) => {
         return (encuentro.eliminMatch == idMatch);
@@ -158,6 +142,20 @@ const devuelveDestino = (idMatch) => {
 }
 
 devuelveDestino(`e2-3`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
