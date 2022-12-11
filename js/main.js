@@ -230,28 +230,5 @@ for (let i = 0; i < divFlecha.length; i++) {
     })
 }
 
-/** Verificamos si la lista se ordena o se coloca de forma aleatoria */
-function obtenOrden() {
-    let orden = 0;
-    let optOrdenCarga = document.getElementsByName(`flexRadioDefault`);
-    for (let i = 0; i < optOrdenCarga.length; i++) {
-        if (optOrdenCarga[i].checked) {
-            orden = optOrdenCarga[i].value;
-        }
-    }
-    return orden
-}
-
-/** colocamos el evento para le botón que listará los equipos */
-let btnCargaEquipos = document.querySelector(`#btn_carga_equipos`);
-btnCargaEquipos.addEventListener(`click`, () => {
-    creaPaises();
-    creaMatches();
-    if (obtenOrden() == 1) {
-        shuffleArray(paises);
-    }
-    cargaFechas();
-    cargaPartidos(1, 8);
-})
 
 

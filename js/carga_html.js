@@ -7,3 +7,102 @@ for (let contenedor of divSVG) {
     contenedor.innerHTML = `<!-- Se carga el SVG de Qatar -->${imgSvg}`;
 }
 
+/** Verificamos si la lista se ordena o se coloca de forma aleatoria */
+function obtenOrden() {
+    let orden = 0;
+    let optOrdenCarga = document.getElementsByName(`flexRadioDefault`);
+    for (let i = 0; i < optOrdenCarga.length; i++) {
+        if (optOrdenCarga[i].checked) {
+            orden = optOrdenCarga[i].value;
+        }
+    }
+    return orden
+}
+
+/** colocamos el evento para le botón que listará los equipos */
+let btnCargaEquipos = document.querySelector(`#btn_carga_equipos`);
+btnCargaEquipos.addEventListener(`click`, () => {
+
+    cargaHtmlDinamico()
+
+    // creaPaises();
+    // creaMatches();
+    // if (obtenOrden() == 1) {
+    //     shuffleArray(paises);
+    // }
+    // cargaFechas();
+    // cargaPartidos(1, 8);
+})
+
+function cargaMatches(html, col, cantMatches){
+    for (let match = 1; match <= cantMatches; match++) {
+        html += `<div id="e${col}-${match}" class="match col__match">`;
+
+        html += `</div>`;
+    }
+    return html;
+}
+
+function cargaHtmlDinamico(){
+    let html = "";
+    let divContenido = document.querySelector(`#divContenido`);
+    for (let col = 1; col <= 4; col++) {   //aqui se carggan las columnas
+        html += `<div id="col__elim${col}" class="col">`;
+        switch (col) {
+             case 1:
+                 html = cargaMatches(html, col,8);  //8vos
+                 break;
+             case 2:
+                 html = cargaMatches(html, col,4);  //4tos
+                 break;
+             case 3:
+                 html = cargaMatches(html, col,2);  //Semis
+                 break;
+             case 4:
+                 html = cargaMatches(html, col,1);  //Final
+                 break;
+        }
+        html += `</div>`;
+    }
+    divContenido.innerHTML = html;
+}
+
+
+
+
+
+
+
+    // <div id="col__elim1" class="col">
+    //     <div id="e1-1" class="match col__match">
+    //         <div id="ln_e1-1" class="lineas__match"></div>
+    //         <div id="arr__e1-1" class="flecha__match">
+    //             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg">
+    //                 <path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" />
+    //             </svg>
+    //         </div>
+    //         <div id="pt_e1-1-r1" class="row__match">
+    //             <div id="fc__e1-1" class="pt__fecha">
+
+    //             </div>
+    //         </div>
+    //         <div id="pt_e1-1-r2" class="row__match">
+    //             <div id="flag__e1-1-1" class="col__flag__equipo">
+
+    //             </div>
+    //             <div id="nombEq__e1-1-1" class="col__nomb__equipo"></div>
+    //             <div class="col__marcador__equipo">
+    //                 <input type="text" id="txtMarcador_e1-1-1" class="text txtMarcador" placeholder="0">
+    //             </div>
+    //         </div>
+    //         <div id="pt_e1-1-r3" class="row__match">
+    //             <div id="flag__e1-1-2" class="col__flag__equipo">
+
+    //             </div>
+    //             <div id="nombEq__e1-1-2" class="col__nomb__equipo"></div>
+    //             <div class="col__marcador__equipo">
+    //                 <input type="text" id="txtMarcador_e1-1-2" class="text txtMarcador" placeholder="0">
+    //             </div>
+    //         </div>
+    //     </div>
+    // </div>
