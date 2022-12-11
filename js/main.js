@@ -11,10 +11,13 @@ const shuffleArray = (array) => {
 
 /* funcion para validar que el dato ingresado sea un número */
 const validaDato = (numero) => {
-    if (isNaN(numero) || numero < 0) {
-        return false;
+    let valoresAceptados = /^[0-9]+$/;
+    if (numero.toString().match(valoresAceptados)) {
+        //alert ("Es numérico");
+        return true
     } else {
-        return true;
+        //alert ("No es numérico");
+        return false
     }
 }
 /************************************************************************* */
@@ -45,41 +48,47 @@ class Match {
 }
 
 /* Creamos los Paises en la clase*/
-const paises = [];
-paises.push(new Pais(1, `Paises Bajos`, `https://ssl.gstatic.com/onebox/media/sports/logos/8GEqzfLegwFFpe6X2BODTg_48x48.png`, 0, 0));
-paises.push(new Pais(2, `Estados Unidos`, `https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_48x48.png`, 0, 0));
-paises.push(new Pais(3, `Argentina`, `https://ssl.gstatic.com/onebox/media/sports/logos/1xBWyjjkA6vEWopPK3lIPA_48x48.png`, 0, 0));
-paises.push(new Pais(4, `Australia`, `https://ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png`, 0, 0));
-paises.push(new Pais(5, `Japón`, `https://ssl.gstatic.com/onebox/media/sports/logos/by4OltvtZz7taxuQtkiP3A_48x48.png`, 0, 0));
-paises.push(new Pais(6, `Croacia`, `https://ssl.gstatic.com/onebox/media/sports/logos/9toerdOg8xW4CRhDaZxsyw_48x48.png`, 0, 0));
-paises.push(new Pais(7, `Brasil`, `https://ssl.gstatic.com/onebox/media/sports/logos/zKLzoJVYz0bb6oAnPUdwWQ_48x48.png`, 0, 0));
-paises.push(new Pais(8, `Corea del Sur`, `https://ssl.gstatic.com/onebox/media/sports/logos/Uu5pwNmMHGd5bCooKrS3Lw_48x48.png`, 0, 0));
-paises.push(new Pais(9, `Francia`, `https://ssl.gstatic.com/onebox/media/sports/logos/z3JEQB3coEAGLCJBEUzQ2A_48x48.png`, 0, 0));
-paises.push(new Pais(10, `Polonia`, `https://ssl.gstatic.com/onebox/media/sports/logos/yTS_Piy3M1wUBnqU0n5aAw_48x48.png`, 0, 0));
-paises.push(new Pais(11, `Inglaterra`, `https://ssl.gstatic.com/onebox/media/sports/logos/DTqIL8Ba3KIuxGkpXw5ayA_48x48.png`, 0, 0));
-paises.push(new Pais(12, `Senegal`, `https://ssl.gstatic.com/onebox/media/sports/logos/zw3ac5sIbH4DS6zP5auOkQ_48x48.png`, 0, 0));
-paises.push(new Pais(13, `Marruecos`, `https://ssl.gstatic.com/onebox/media/sports/logos/I3gt2Ew39ux3GGdZ-4JE3g_48x48.png`, 0, 0));
-paises.push(new Pais(14, `España`, `https://ssl.gstatic.com/onebox/media/sports/logos/5hLkf7KFHhmpaiOJQv8LmA_48x48.png`, 0, 0));
-paises.push(new Pais(15, `Portugal`, `https://ssl.gstatic.com/onebox/media/sports/logos/HJ3_2c4w791nZJj7n-Lj3Q_48x48.png`, 0, 0));
-paises.push(new Pais(16, `Suiza`, `https://ssl.gstatic.com/onebox/media/sports/logos/1hy9ek4dOIffYULM6k1fqg_48x48.png`, 0, 0));
+let paises = [];
+function creaPaises() {
+    paises = [];
+    paises.push(new Pais(1, `Paises Bajos`, `https://ssl.gstatic.com/onebox/media/sports/logos/8GEqzfLegwFFpe6X2BODTg_48x48.png`, 0, 0));
+    paises.push(new Pais(2, `USA`, `https://ssl.gstatic.com/onebox/media/sports/logos/wj9uZvn_vZrelLFGH8fnPA_48x48.png`, 0, 0));
+    paises.push(new Pais(3, `Argentina`, `https://ssl.gstatic.com/onebox/media/sports/logos/1xBWyjjkA6vEWopPK3lIPA_48x48.png`, 0, 0));
+    paises.push(new Pais(4, `Australia`, `https://ssl.gstatic.com/onebox/media/sports/logos/jSgw5z0EPOLzdUi-Aomq7Q_48x48.png`, 0, 0));
+    paises.push(new Pais(5, `Japón`, `https://ssl.gstatic.com/onebox/media/sports/logos/by4OltvtZz7taxuQtkiP3A_48x48.png`, 0, 0));
+    paises.push(new Pais(6, `Croacia`, `https://ssl.gstatic.com/onebox/media/sports/logos/9toerdOg8xW4CRhDaZxsyw_48x48.png`, 0, 0));
+    paises.push(new Pais(7, `Brasil`, `https://ssl.gstatic.com/onebox/media/sports/logos/zKLzoJVYz0bb6oAnPUdwWQ_48x48.png`, 0, 0));
+    paises.push(new Pais(8, `Corea del Sur`, `https://ssl.gstatic.com/onebox/media/sports/logos/Uu5pwNmMHGd5bCooKrS3Lw_48x48.png`, 0, 0));
+    paises.push(new Pais(9, `Francia`, `https://ssl.gstatic.com/onebox/media/sports/logos/z3JEQB3coEAGLCJBEUzQ2A_48x48.png`, 0, 0));
+    paises.push(new Pais(10, `Polonia`, `https://ssl.gstatic.com/onebox/media/sports/logos/yTS_Piy3M1wUBnqU0n5aAw_48x48.png`, 0, 0));
+    paises.push(new Pais(11, `Inglaterra`, `https://ssl.gstatic.com/onebox/media/sports/logos/DTqIL8Ba3KIuxGkpXw5ayA_48x48.png`, 0, 0));
+    paises.push(new Pais(12, `Senegal`, `https://ssl.gstatic.com/onebox/media/sports/logos/zw3ac5sIbH4DS6zP5auOkQ_48x48.png`, 0, 0));
+    paises.push(new Pais(13, `Marruecos`, `https://ssl.gstatic.com/onebox/media/sports/logos/I3gt2Ew39ux3GGdZ-4JE3g_48x48.png`, 0, 0));
+    paises.push(new Pais(14, `España`, `https://ssl.gstatic.com/onebox/media/sports/logos/5hLkf7KFHhmpaiOJQv8LmA_48x48.png`, 0, 0));
+    paises.push(new Pais(15, `Portugal`, `https://ssl.gstatic.com/onebox/media/sports/logos/HJ3_2c4w791nZJj7n-Lj3Q_48x48.png`, 0, 0));
+    paises.push(new Pais(16, `Suiza`, `https://ssl.gstatic.com/onebox/media/sports/logos/1hy9ek4dOIffYULM6k1fqg_48x48.png`, 0, 0));
+}
 
 /* Creamos los Partidos de futbol (Match) a jugarse */
-const matches = [];
-matches.push(new Match(1, `03/12/22`, `e1-1`, 0, 0, 0, `e2-1-1`));
-matches.push(new Match(2, `03/12/22`, `e1-2`, 0, 0, 0, `e2-1-2`));
-matches.push(new Match(3, `05/12/22`, `e1-3`, 0, 0, 0, `e2-2-1`));
-matches.push(new Match(4, `05/12/22`, `e1-4`, 0, 0, 0, `e2-2-2`));
-matches.push(new Match(5, `04/12/22`, `e1-5`, 0, 0, 0, `e2-3-1`));
-matches.push(new Match(6, `04/12/22`, `e1-6`, 0, 0, 0, `e2-3-2`));
-matches.push(new Match(7, `06/12/22`, `e1-7`, 0, 0, 0, `e2-4-1`));
-matches.push(new Match(8, `06/12/22`, `e1-8`, 0, 0, 0, `e2-4-2`));
-matches.push(new Match(9, `09/12/22`, `e2-1`, 0, 0, 0, `e3-1-1`));
-matches.push(new Match(10, `09/12/22`, `e2-2`, 0, 0, 0, `e3-1-2`));
-matches.push(new Match(11, `10/12/22`, `e2-3`, 0, 0, 0, `e3-2-1`));
-matches.push(new Match(12, `10/12/22`, `e2-4`, 0, 0, 0, `e3-2-2`));
-matches.push(new Match(13, `13/12/22`, `e3-1`, 0, 0, 0, `e4-1-1`));
-matches.push(new Match(14, `14/12/22`, `e3-2`, 0, 0, 0, `e4-1-2`));
-matches.push(new Match(15, `18/12/22`, `e4-1`, 0, 0, 0, `w-w-w`));
+let matches = [];
+function creaMatches() {
+    matches = [];
+    matches.push(new Match(1, `03/12/22`, `e1-1`, 0, 0, 0, `e2-1-1`));
+    matches.push(new Match(2, `03/12/22`, `e1-2`, 0, 0, 0, `e2-1-2`));
+    matches.push(new Match(3, `05/12/22`, `e1-3`, 0, 0, 0, `e2-2-1`));
+    matches.push(new Match(4, `05/12/22`, `e1-4`, 0, 0, 0, `e2-2-2`));
+    matches.push(new Match(5, `04/12/22`, `e1-5`, 0, 0, 0, `e2-3-1`));
+    matches.push(new Match(6, `04/12/22`, `e1-6`, 0, 0, 0, `e2-3-2`));
+    matches.push(new Match(7, `06/12/22`, `e1-7`, 0, 0, 0, `e2-4-1`));
+    matches.push(new Match(8, `06/12/22`, `e1-8`, 0, 0, 0, `e2-4-2`));
+    matches.push(new Match(9, `09/12/22`, `e2-1`, 0, 0, 0, `e3-1-1`));
+    matches.push(new Match(10, `09/12/22`, `e2-2`, 0, 0, 0, `e3-1-2`));
+    matches.push(new Match(11, `10/12/22`, `e2-3`, 0, 0, 0, `e3-2-1`));
+    matches.push(new Match(12, `10/12/22`, `e2-4`, 0, 0, 0, `e3-2-2`));
+    matches.push(new Match(13, `13/12/22`, `e3-1`, 0, 0, 0, `e4-1-1`));
+    matches.push(new Match(14, `14/12/22`, `e3-2`, 0, 0, 0, `e4-1-2`));
+    matches.push(new Match(15, `18/12/22`, `e4-1`, 0, 0, 0, `w-w-w`));
+}
 
 
 /** Funcion para aregar la fecha al div contenedor de cada partido (match) */
@@ -181,12 +190,12 @@ const obtenGanadorYcolocalo = (encuentroOrigen, encuentroDestino) => {
         return;
     }
     let paisGanador = ``;
-    if (validaDato(parseInt(txtUno.value)) == false) {
-        alert("El marcador del equipo 1 debe ser un número mayor o igual a CERO.");
+    if (validaDato(txtUno.value) == false) {
+        alert("El marcador del equipo 1 debe ser un número ENTERO y mayor o igual a CERO.");
         return;
     }
-    if (validaDato(parseInt(txtDos.value)) == false) {
-        alert("El marcador del equipo 2 debe ser un número mayor o igual a CERO.");
+    if (validaDato(txtDos.value) == false) {
+        alert("El marcador del equipo 2 debe ser un número ENTERO y mayor o igual a CERO.");
         return;
     }
     if (parseInt(txtUno.value) > parseInt(txtDos.value)) {
@@ -215,11 +224,34 @@ const siguienteMatch = (idMatch) => {
 /* Agregamos eventos a las FLECHAS de cada encuentro */
 let divFlecha = document.getElementsByClassName(`flecha__match`);
 for (let i = 0; i < divFlecha.length; i++) {
+
     divFlecha[i].addEventListener(`click`, () => {
         siguienteMatch(divFlecha[i].id);
     })
 }
 
-shuffleArray(paises);
-cargaFechas();
-cargaPartidos(1, 8);
+/** Verificamos si la lista se ordena o se coloca de forma aleatoria */
+function obtenOrden() {
+    let orden = 0;
+    let optOrdenCarga = document.getElementsByName(`flexRadioDefault`);
+    for (let i = 0; i < optOrdenCarga.length; i++) {
+        if (optOrdenCarga[i].checked) {
+            orden = optOrdenCarga[i].value;
+        }
+    }
+    return orden
+}
+
+/** colocamos el evento para le botón que listará los equipos */
+let btnCargaEquipos = document.querySelector(`#btn_carga_equipos`);
+btnCargaEquipos.addEventListener(`click`, () => {
+    creaPaises();
+    creaMatches();
+    if (obtenOrden() == 1) {
+        shuffleArray(paises);
+    }
+    cargaFechas();
+    cargaPartidos(1, 8);
+})
+
+

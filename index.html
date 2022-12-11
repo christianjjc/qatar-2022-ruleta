@@ -8,18 +8,41 @@
     <title>JS - ProyFinal v02</title>
 
     <link rel="stylesheet" href="./css/main.css">
+    <script defer src="./js/carga_html.js"></script>
     <script defer src="./js/main.js"></script>
 </head>
 
 <body>
     <header>
-
+        <nav class="cabecera">
+            <div class="cabecera--row">
+                <div class="logo__qatar"><!-- Se carga el SVG de Qatar --></div>
+                <div>
+                    <h1>JUEGA A LA RULETA GANADORA</h1>
+                </div>
+                <div class="logo__qatar"><!-- Se carga el SVG de Qatar --></div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="container">
             <section id="titulo_fase">
                 <div id="fixture__contenedor__titulo">
-                    <div class="row row__titulo">
+                    <div class="row__titulo--leyenda">
+                        <div class="row__leyenda">
+                            <p>El objetivo del juego es tratar de adivinar quiénes de los 16 equipos clasificados a la fase de eliminación directa podrán llegar a disputar la GRAN FINAL.</p>
+                            <p>Puedes generar la lista de los 16 aleatoriamente o dejar el orden real de la competición (tú decides).</p>
+                            <p>Deberás elegir a los 2 finalistas e inrgesar la cantidad a apostar antes de correr el aplicativo.</p>
+                        </div>
+                        <div class="row__leyenda--controles">
+                            <button id="btn_carga_equipos" type="button" class="btn btn-secondary">Cargar Equipos</button>
+                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="1">
+                            <label for="flexRadioDefault1">Órden aleatorio</label>
+                            <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="0" checked>
+                            <label for="flexRadioDefault2">Órden Real</label>
+                        </div>
+                    </div>
+                    <div class="row__titulo">
                         <div id="tit__elim1" class="col col__titulo">Octavos de Final</div>
                         <div id="tit__elim2" class="col col__titulo">Cuartos de Final</div>
                         <div id="tit__elim3" class="col col__titulo">Semifinales</div>
@@ -31,19 +54,19 @@
                 <div id="fixture__contenedor">
                     <div class="row">
                         <div id="col__elim1" class="col">
-                            <div id="e1-1" class="match octavos__match col col__match">
+                            <div id="e1-1" class="match col__match">
                                 <div id="ln_e1-1" class="lineas__match"></div>
                                 <div id="arr__e1-1" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg">
                                         <path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" />
                                     </svg>
                                 </div>
-                                <div id="pt_e1-1-r1" class="row row__match">
+                                <div id="pt_e1-1-r1" class="row__match">
                                     <div id="fc__e1-1" class="pt__fecha">
 
                                     </div>
                                 </div>
-                                <div id="pt_e1-1-r2" class="row row__match">
+                                <div id="pt_e1-1-r2" class="row__match">
                                     <div id="flag__e1-1-1" class="col__flag__equipo">
 
                                     </div>
@@ -52,7 +75,7 @@
                                         <input type="text" id="txtMarcador_e1-1-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-1-r3" class="row row__match">
+                                <div id="pt_e1-1-r3" class="row__match">
                                     <div id="flag__e1-1-2" class="col__flag__equipo">
 
                                     </div>
@@ -62,15 +85,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-2" class="match octavos__match col col__match">
-                                <div id="ln_e1-2" class="lineas__match lineas__match-abajo"></div>
+                            <div id="e1-2" class="match col__match">
+                                <div id="ln_e1-2" class="lineas__match-abajo"></div>
                                 <div id="arr__e1-2" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
-                                <div id="pt_e1-2-r1" class="row row__match">
+                                <div id="pt_e1-2-r1" class="row__match">
                                     <div id="fc__e1-2" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-2-r2" class="row row__match">
+                                <div id="pt_e1-2-r2" class="row__match">
                                     <div id="flag__e1-2-1" class="col__flag__equipo">
 
                                     </div>
@@ -79,9 +102,8 @@
                                         <input type="text" id="txtMarcador_e1-2-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-2-r3" class="row row__match">
+                                <div id="pt_e1-2-r3" class="row__match">
                                     <div id="flag__e1-2-2" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-2-2" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
@@ -89,26 +111,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-3" class="match octavos__match col col__match">
+                            <div id="e1-3" class="match col__match">
                                 <div id="ln_e1-3" class="lineas__match"></div>
-
                                 <div id="arr__e1-3" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" /></svg>
                                 </div>
 
-                                <div id="pt_e1-3-r1" class="row row__match">
+                                <div id="pt_e1-3-r1" class="row__match">
                                     <div id="fc__e1-3" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-3-r2" class="row row__match">
+                                <div id="pt_e1-3-r2" class="row__match">
                                     <div id="flag__e1-3-1" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-3-1" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
                                         <input type="text" id="txtMarcador_e1-3-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-4-r3" class="row row__match">
+                                <div id="pt_e1-4-r3" class="row__match">
                                     <div id="flag__e1-3-2" class="col__flag__equipo">
 
                                     </div>
@@ -118,26 +138,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-4" class="match octavos__match col col__match">
-                                <div id="ln_e1-4" class="lineas__match lineas__match-abajo"></div>
-
+                            <div id="e1-4" class="match col__match">
+                                <div id="ln_e1-4" class="lineas__match-abajo"></div>
                                 <div id="arr__e1-4" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
-
-                                <div id="pt_e1-4-r1" class="row row__match">
+                                <div id="pt_e1-4-r1" class="row__match">
                                     <div id="fc__e1-4" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-4-r2" class="row row__match">
+                                <div id="pt_e1-4-r2" class="row__match">
                                     <div id="flag__e1-4-1" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-4-1" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
                                         <input type="text" id="txtMarcador_e1-4-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-4-3" class="row row__match">
+                                <div id="pt_e1-4-3" class="row__match">
                                     <div id="flag__e1-4-2" class="col__flag__equipo">
 
                                     </div>
@@ -147,27 +164,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-5" class="match octavos__match col col__match">
+                            <div id="e1-5" class="match col__match">
                                 <div id="ln_e1-5" class="lineas__match"></div>
-
                                 <div id="arr__e1-5" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" /></svg>
                                 </div>
-
-
-                                <div id="pt_e1-5-r1" class="row row__match">
+                                <div id="pt_e1-5-r1" class="row__match">
                                     <div id="fc__e1-5" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-5-r2" class="row row__match">
+                                <div id="pt_e1-5-r2" class="row__match">
                                     <div id="flag__e1-5-1" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-5-1" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
                                         <input type="text" id="txtMarcador_e1-5-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-5-r3" class="row row__match">
+                                <div id="pt_e1-5-r3" class="row__match">
                                     <div id="flag__e1-5-2" class="col__flag__equipo">
 
                                     </div>
@@ -177,18 +190,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-6" class="match octavos__match col col__match">
-                                <div id="ln_e1-6" class="lineas__match lineas__match-abajo"></div>
-
+                            <div id="e1-6" class="match col__match">
+                                <div id="ln_e1-6" class="lineas__match-abajo"></div>
                                 <div id="arr__e1-6" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
-
-
-                                <div id="pt_e1-6-r1" class="row row__match">
+                                <div id="pt_e1-6-r1" class="row__match">
                                     <div id="fc__e1-6" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-6-r2" class="row row__match">
+                                <div id="pt_e1-6-r2" class="row__match">
                                     <div id="flag__e1-6-1" class="col__flag__equipo">
 
                                     </div>
@@ -197,7 +207,7 @@
                                         <input type="text" id="txtMarcador_e1-6-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-6-r3" class="row row__match">
+                                <div id="pt_e1-6-r3" class="row__match">
                                     <div id="flag__e1-6-2" class="col__flag__equipo">
 
                                     </div>
@@ -207,28 +217,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-7" class="match octavos__match col col__match">
+                            <div id="e1-7" class="match col__match">
                                 <div id="ln_e1-7" class="lineas__match"></div>
-
                                 <div id="arr__e1-7" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" /></svg>
                                 </div>
-
-
-
-                                <div id="pt_e1-7-r1" class="row row__match">
+                                <div id="pt_e1-7-r1" class="row__match">
                                     <div id="fc__e1-7" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-7-r2" class="row row__match">
+                                <div id="pt_e1-7-r2" class="row__match">
                                     <div id="flag__e1-7-1" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-7-1" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
                                         <input type="text" id="txtMarcador_e1-7-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-7-r3" class="row row__match">
+                                <div id="pt_e1-7-r3" class="row__match">
                                     <div id="flag__e1-7-2" class="col__flag__equipo">
 
                                     </div>
@@ -238,28 +243,26 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e1-8" class="match octavos__match col col__match">
-                                <div id="ln_e1-8" class="lineas__match lineas__match-abajo"></div>
+                            <div id="e1-8" class="match col__match">
+                                <div id="ln_e1-8" class="lineas__match-abajo"></div>
 
                                 <div id="arr__e1-8" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
 
-                                <div id="pt_e1-8-r1" class="row row__match">
+                                <div id="pt_e1-8-r1" class="row__match">
                                     <div id="fc__e1-8" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e1-8-r2" class="row row__match">
+                                <div id="pt_e1-8-r2" class="row__match">
                                     <div id="flag__e1-8-1" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-8-1" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
                                         <input type="text" id="txtMarcador_e1-8-1" class="text txtMarcador" placeholder="0">
                                     </div>
                                 </div>
-                                <div id="pt_e1-8-r3" class="row row__match">
+                                <div id="pt_e1-8-r3" class="row__match">
                                     <div id="flag__e1-8-2" class="col__flag__equipo">
-
                                     </div>
                                     <div id="nombEq__e1-8-2" class="col__nomb__equipo"></div>
                                     <div class="col__marcador__equipo">
@@ -269,16 +272,16 @@
                             </div>
                         </div>
                         <div id="col__elim2" class="col">
-                            <div id="e2-1" class="match cuartos__match col col__match">
-                                <div id="ln_e2-1" class="lineas__match lineas__match-b"></div>
+                            <div id="e2-1" class="match cuartos__match col__match">
+                                <div id="ln_e2-1" class="lineas__match-b"></div>
                                 <div id="ln_e2-1b" class="lineas__h__match"></div>
                                 <div id="arr__e2-1" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" /></svg>
                                 </div>
-                                <div id="pt_e2-1-r1" class="row row__match">
+                                <div id="pt_e2-1-r1" class="row__match">
                                     <div id="fc__e2-1" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e2-1-r2" class="row row__match">
+                                <div id="pt_e2-1-r2" class="row__match">
                                     <div id="flag__e2-1-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-1-1" class="col__nomb__equipo"></div>
@@ -286,7 +289,7 @@
                                         <input type="text" id="txtMarcador_e2-1-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e2-1-r3" class="row row__match">
+                                <div id="pt_e2-1-r3" class="row__match">
                                     <div id="flag__e2-1-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-1-2" class="col__nomb__equipo"></div>
@@ -295,16 +298,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e2-2" class="match cuartos__match col col__match">
-                                <div id="ln_e2-2" class="lineas__match lineas__match-abajo-b"></div>
+                            <div id="e2-2" class="match cuartos__match col__match">
+                                <div id="ln_e2-2" class="lineas__match-abajo-b"></div>
                                 <div id="ln_e2-2b" class="lineas__h__match"></div>
                                 <div id="arr__e2-2" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
-                                <div id="pt_e2-2-r1" class="row row__match">
+                                <div id="pt_e2-2-r1" class="row__match">
                                     <div id="fc__e2-2" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e2-2-r2" class="row row__match">
+                                <div id="pt_e2-2-r2" class="row__match">
                                     <div id="flag__e2-2-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-2-1" class="col__nomb__equipo"></div>
@@ -312,7 +315,7 @@
                                         <input type="text" id="txtMarcador_e2-2-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e2-2-r3" class="row row__match">
+                                <div id="pt_e2-2-r3" class="row__match">
                                     <div id="flag__e2-2-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-2-2" class="col__nomb__equipo"></div>
@@ -321,16 +324,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e2-3" class="match cuartos__match col col__match">
-                                <div id="ln_e2-3" class="lineas__match lineas__match-b"></div>
+                            <div id="e2-3" class="match cuartos__match col__match">
+                                <div id="ln_e2-3" class="lineas__match-b"></div>
                                 <div id="ln_e2-3b" class="lineas__h__match"></div>
                                 <div id="arr__e2-3" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" /></svg>
                                 </div>
-                                <div id="pt_e2-3-r1" class="row row__match">
+                                <div id="pt_e2-3-r1" class="row__match">
                                     <div id="fc__e2-3" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e2-3-r2" class="row row__match">
+                                <div id="pt_e2-3-r2" class="row__match">
                                     <div id="flag__e2-3-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-3-1" class="col__nomb__equipo"></div>
@@ -338,7 +341,7 @@
                                         <input type="text" id="txtMarcador_e2-3-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e2-3-r3" class="row row__match">
+                                <div id="pt_e2-3-r3" class="row__match">
                                     <div id="flag__e2-3-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-3-2" class="col__nomb__equipo"></div>
@@ -347,16 +350,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e2-4" class="match cuartos__match col col__match">
-                                <div id="ln_e2-4" class="lineas__match lineas__match-abajo-b"></div>
+                            <div id="e2-4" class="match cuartos__match col__match">
+                                <div id="ln_e2-4" class="lineas__match-abajo-b"></div>
                                 <div id="ln_e2-4b" class="lineas__h__match"></div>
                                 <div id="arr__e2-4" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
-                                <div id="pt_e2-4-r1" class="row row__match">
+                                <div id="pt_e2-4-r1" class="row__match">
                                     <div id="fc__e2-4" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e2-4-r2" class="row row__match">
+                                <div id="pt_e2-4-r2" class="row__match">
                                     <div id="flag__e2-4-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-4-1" class="col__nomb__equipo"></div>
@@ -364,7 +367,7 @@
                                         <input type="text" id="txtMarcador_e2-4-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e2-4-r3" class="row row__match">
+                                <div id="pt_e2-4-r3" class="row__match">
                                     <div id="flag__e2-4-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e2-4-2" class="col__nomb__equipo"></div>
@@ -375,16 +378,16 @@
                             </div>
                         </div>
                         <div id="col__elim3" class="col">
-                            <div id="e3-1" class="match semis__match col col__match">
-                                <div id="ln_e3-1" class="lineas__match lineas__match-c"></div>
+                            <div id="e3-1" class="match semis__match col__match">
+                                <div id="ln_e3-1" class="lineas__match-c"></div>
                                 <div id="ln_e3-1b" class="lineas__h__match"></div>
                                 <div id="arr__e3-1" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path  d="M14.89,12.06V7.11H18.31V18.31H7.11V14.89H12.06L5.69,8.5L8.5,5.69L14.89,12.06Z" /></svg>
                                 </div>
-                                <div id="pt_e3-1-r1" class="row row__match">
+                                <div id="pt_e3-1-r1" class="row__match">
                                     <div id="fc__e3-1" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e3-1-r2" class="row row__match">
+                                <div id="pt_e3-1-r2" class="row__match">
                                     <div id="flag__e3-1-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e3-1-1" class="col__nomb__equipo"></div>
@@ -392,7 +395,7 @@
                                         <input type="text" id="txtMarcador_e3-1-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e3-1-r3" class="row row__match">
+                                <div id="pt_e3-1-r3" class="row__match">
                                     <div id="flag__e3-1-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e3-1-2" class="col__nomb__equipo"></div>
@@ -401,16 +404,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="e3-2" class="match semis__match col col__match">
-                                <div id="ln_e3-2" class="lineas__match lineas__match-abajo-c"></div>
+                            <div id="e3-2" class="match semis__match col__match">
+                                <div id="ln_e3-2" class="lineas__match-abajo-c"></div>
                                 <div id="ln_e3-2b" class="lineas__h__match"></div>
                                 <div id="arr__e3-2" class="flecha__match">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="flechas__svg"><path d="M8.5,18.31L5.69,15.5L12.06,9.12H7.11V5.69H18.31V16.89H14.89V11.94L8.5,18.31Z" /></svg>
                                 </div>
-                                <div id="pt_e3-2-r1" class="row row__match">
+                                <div id="pt_e3-2-r1" class="row__match">
                                     <div id="fc__e3-2" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e3-2-r2" class="row row__match">
+                                <div id="pt_e3-2-r2" class="row__match">
                                     <div id="flag__e3-2-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e3-2-1" class="col__nomb__equipo"></div>
@@ -418,7 +421,7 @@
                                         <input type="text" id="txtMarcador_e3-2-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e3-2-r3" class="row row__match">
+                                <div id="pt_e3-2-r3" class="row__match">
                                     <div id="flag__e3-2-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e3-2-2" class="col__nomb__equipo"></div>
@@ -429,12 +432,12 @@
                             </div>
                         </div>
                         <div id="col__elim4" class="col">
-                            <div id="e4-1" class="match final__match col col__match">
-                                <div id="ln_e4-1" class="lineas__h__match lineas__h__match-b"></div>
-                                <div id="pt_e4-1-r1" class="row row__match">
+                            <div id="e4-1" class="match final__match col__match">
+                                <div id="ln_e4-1" class="lineas__h__match-b"></div>
+                                <div id="pt_e4-1-r1" class="row__match">
                                     <div id="fc__e4-1" class="pt__fecha"></div>
                                 </div>
-                                <div id="pt_e4-1-r2" class="row row__match">
+                                <div id="pt_e4-1-r2" class="row__match">
                                     <div id="flag__e4-1-1" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e4-1-1" class="col__nomb__equipo"></div>
@@ -442,7 +445,7 @@
                                         <input type="text" id="txtMarcador_e4-1-1" class="text txtMarcador" Value = "0">
                                     </div>
                                 </div>
-                                <div id="pt_e4-1-r3" class="row row__match">
+                                <div id="pt_e4-1-r3" class="row__match">
                                     <div id="flag__e4-1-2" class="col__flag__equipo">
                                     </div>
                                     <div id="nombEq__e4-1-2" class="col__nomb__equipo"></div>
