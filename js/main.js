@@ -222,13 +222,15 @@ const siguienteMatch = (idMatch) => {
 }
 
 /* Agregamos eventos a las FLECHAS de cada encuentro */
-let divFlecha = document.getElementsByClassName(`flecha__match`);
-for (let i = 0; i < divFlecha.length; i++) {
-
-    divFlecha[i].addEventListener(`click`, () => {
-        siguienteMatch(divFlecha[i].id);
-    })
+function eventoFlechas(){
+    let divFlecha = document.getElementsByClassName(`flecha__match`);
+    for (let i = 0; i < divFlecha.length; i++) {
+        divFlecha[i].addEventListener(`click`, () => {
+            siguienteMatch(divFlecha[i].id);
+        })
+    }
 }
+
 
 
 
