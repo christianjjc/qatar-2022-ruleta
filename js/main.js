@@ -9,6 +9,21 @@ const shuffleArray = (array) => {
     }
 }
 
+/** Funcion para obtener datos en el array a partir de otro campo */
+function getFieldObj(arrayObjeto, strDatoBuscado, strPropiedadAbuscar, strPropiedadDevolver) {
+    const arrayFind = arrayObjeto.find((arrayFind) => {
+        return arrayFind[strPropiedadAbuscar] == strDatoBuscado;
+    });
+    if (arrayFind) {
+        let datoDevolver = arrayFind[strPropiedadDevolver];
+        return datoDevolver;
+    } else {
+        return ``;
+    }
+}
+//getFieldObj(paises,datoSeleccionado,`nombrePais`,`idPais`)
+
+
 /* funcion para validar que el dato ingresado sea un número */
 const validaDato = (numero) => {
     let valoresAceptados = /^[0-9]+$/;
@@ -20,7 +35,8 @@ const validaDato = (numero) => {
         return false
     }
 }
-/************************************************************************* */
+
+
 
 
 /* Clase para los 16 Paises que participan desde los 8vos de final*/

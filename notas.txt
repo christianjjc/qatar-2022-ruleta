@@ -91,3 +91,24 @@ console.log(cursos.find(item => (item.precio > 15000) && (item.precio <= 21000))
 // Método Filter => Devuelve un nuevo array resultante
 /* const resultado = cursos.filter(item => item.precio < 20000);
 console.log(resultado); */
+
+
+
+
+const cargaPaisesEnCombo = () => {
+    const cmbPaises = document.querySelector(`#cmbPaises`);
+    let html=``;
+    for (const pais of paises) {
+        html += `<option value="${pais.idPais}">${pais.nombrePais}</option>`;
+    }
+    cmbPaises.innerHTML = html;
+}
+
+
+const btnMostrarIdPais = document.querySelector(`#btnMuestraId`);
+btnMostrarIdPais.addEventListener(`click`, () => {
+    const cmbPaises = document.querySelector(`#cmbPaises`);
+    const datoSeleccionado = cmbPaises.options[cmbPaises.selectedIndex].text;
+    alert(datoSeleccionado);
+    alert(getFieldObj(paises,datoSeleccionado,`nombrePais`,`idPais`));
+})
