@@ -57,7 +57,7 @@ body {
     height: 50px;
     background-color: black; }
   .row__titulo--leyenda {
-    height: 200px;
+    height: 300px;
     font-size: 14px;
     background-color: #1b1c1f;
     flex-direction: column;

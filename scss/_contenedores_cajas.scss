@@ -62,7 +62,7 @@
 
     &__titulo--leyenda{
         @extend .row;
-        height: 200px;
+        height: 300px;
         font-size: 14px;
         background-color:  $glb-color-fondo-contenedor;
         flex-direction:column;
@@ -111,5 +111,6 @@
     padding: 10px 10px;
     &--controles{
         @extend .row__leyenda;
+
     }
 }
