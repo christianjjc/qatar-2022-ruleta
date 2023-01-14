@@ -7,19 +7,28 @@ for (let contenedor of divSVG) {
 }
 
 
-
-/** colocamos el evento para le botón que cargará el HTML */
+/** colocamos el evento para el botón que cargará el HTML */
 let btnCargaHtml = document.querySelector(`#btn_carga_html`);
 btnCargaHtml.addEventListener(`click`, () => {
     cargaHtmlDinamico();
 })
 
-
-
 /** Verificamos si la lista se ordena o se coloca de forma aleatoria */
-function obtenOrden() {
+/* function obtenOrden() {
     let orden = 0;
     let optOrdenCarga = document.getElementsByName(`flexRadioDefault`);
+    for (let i = 0; i < optOrdenCarga.length; i++) {
+        if (optOrdenCarga[i].checked) {
+            orden = optOrdenCarga[i].value;
+        }
+    }
+    return orden
+} */
+
+
+function obtenRadioButton(nombreGrupo) {
+    let orden = 0;
+    let optOrdenCarga = document.getElementsByName(nombreGrupo);
     for (let i = 0; i < optOrdenCarga.length; i++) {
         if (optOrdenCarga[i].checked) {
             orden = optOrdenCarga[i].value;
@@ -32,9 +41,9 @@ function obtenOrden() {
 /** colocamos el evento para le botón que listará los equipos */
 let btnCargaEquipos = document.querySelector(`#btn_carga_equipos`);
 btnCargaEquipos.addEventListener(`click`, () => {
-    creaPaises();
-    creaMatches();
-    if (obtenOrden() == 1) {
+    // creaPaises();
+    // creaMatches();
+    if (obtenRadioButton(`flexRadioDefault`) == 1) {
         shuffleArray(paises);
     }
     cargaFechas();
@@ -142,3 +151,21 @@ function cargaHtmlDinamico(){
     divContenido.innerHTML = html;
     eventoFlechas();
 }
+
+
+function llenaComboPaises() {
+    const datoPaises = JSON.parse(localStorage.getItem("paises"));
+    console.log(datoPaises);
+    //document.getElementById("resultado").innerHTML = salida;
+    let html = "";
+    for (const pais of datoPaises) {
+        html += `<option value="${pais.idPais}">${pais.nombrePais}</option>`;
+    }
+    cmbActivo.innerHTML = html;
+}
+
+
+let cmbActivo = document.getElementById(`cmbPrimerf`);
+llenaComboPaises(cmbActivo);
+cmbActivo = document.getElementById(`cmbSegundof`);
+llenaComboPaises(cmbActivo);

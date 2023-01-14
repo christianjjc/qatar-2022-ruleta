@@ -49,6 +49,7 @@ class Match {
 
 /* Creamos los Paises en la clase*/
 let paises = [];
+
 function creaPaises() {
     paises = [];
     paises.push(new Pais(1, `Paises Bajos`, `https://ssl.gstatic.com/onebox/media/sports/logos/8GEqzfLegwFFpe6X2BODTg_48x48.png`, 0, 0));
@@ -67,7 +68,12 @@ function creaPaises() {
     paises.push(new Pais(14, `España`, `https://ssl.gstatic.com/onebox/media/sports/logos/5hLkf7KFHhmpaiOJQv8LmA_48x48.png`, 0, 0));
     paises.push(new Pais(15, `Portugal`, `https://ssl.gstatic.com/onebox/media/sports/logos/HJ3_2c4w791nZJj7n-Lj3Q_48x48.png`, 0, 0));
     paises.push(new Pais(16, `Suiza`, `https://ssl.gstatic.com/onebox/media/sports/logos/1hy9ek4dOIffYULM6k1fqg_48x48.png`, 0, 0));
+
+    localStorage.clear();
+    localStorage.setItem("paises",JSON.stringify(paises));
+
 }
+
 
 /* Creamos los Partidos de futbol (Match) a jugarse */
 let matches = [];
@@ -97,6 +103,10 @@ const agregaFechas = (elim, match, cont) => {
     divFechaMatch.className = `pt__fecha`;
     divFechaMatch.innerHTML = matches[cont].fechaMatch;
 }
+
+
+
+
 
 /** Funcion para bandera y nombre de equipo al div contenedor de cada partido (match) */
 const agregaEquipo = (elim, match, posicion, pais) => {
@@ -230,6 +240,11 @@ function eventoFlechas(){
         })
     }
 }
+
+
+
+creaPaises();
+creaMatches();
 
 
 
