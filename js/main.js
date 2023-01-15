@@ -13,10 +13,8 @@ const shuffleArray = (array) => {
 const validaDato = (numero) => {
     let valoresAceptados = /^[0-9]+$/;
     if (numero.toString().match(valoresAceptados)) {
-        //alert ("Es numérico");
         return true
     } else {
-        //alert ("No es numérico");
         return false
     }
 }
