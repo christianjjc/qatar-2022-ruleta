@@ -7,34 +7,29 @@ for (let contenedor of divSVG) {
 }
 
 
-
-/** colocamos el evento para le botón que cargará el HTML */
+/** colocamos el evento para el botón que cargará el HTML */
 let btnCargaHtml = document.querySelector(`#btn_carga_html`);
 btnCargaHtml.addEventListener(`click`, () => {
     cargaHtmlDinamico();
 })
 
 
-
-/** Verificamos si la lista se ordena o se coloca de forma aleatoria */
-function obtenOrden() {
+function obtenRadioButton(nombreGrupo) {
     let orden = 0;
-    let optOrdenCarga = document.getElementsByName(`flexRadioDefault`);
+    let optOrdenCarga = document.getElementsByName(nombreGrupo);
     for (let i = 0; i < optOrdenCarga.length; i++) {
-        if (optOrdenCarga[i].checked) {
+         if (optOrdenCarga[i].checked) {
             orden = optOrdenCarga[i].value;
-        }
+        };
     }
-    return orden
+    return orden;
 }
 
 
 /** colocamos el evento para le botón que listará los equipos */
 let btnCargaEquipos = document.querySelector(`#btn_carga_equipos`);
 btnCargaEquipos.addEventListener(`click`, () => {
-    creaPaises();
-    creaMatches();
-    if (obtenOrden() == 1) {
+    if (obtenRadioButton(`flexRadioDefault`) == 1) {
         shuffleArray(paises);
     }
     cargaFechas();
@@ -142,3 +137,55 @@ function cargaHtmlDinamico(){
     divContenido.innerHTML = html;
     eventoFlechas();
 }
+
+
+function llenaComboPaises() {
+    const datoPaises = JSON.parse(localStorage.getItem("paises"));
+    let html = "";
+    for (const pais of datoPaises) {
+        html += `<option value="${pais.idPais}">${pais.nombrePais}</option>`;
+    }
+    cmbActivo.innerHTML = html;
+}
+
+
+let cmbActivo = document.getElementById(`cmbPrimerf`);
+llenaComboPaises(cmbActivo);
+cmbActivo = document.getElementById(`cmbSegundof`);
+llenaComboPaises(cmbActivo);
+
+
+
+
+let marcadorAleatorio = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+
+
+let btn_iniciaJuego = document.querySelector(`#btn_iniciaJuego`);
+btn_iniciaJuego.addEventListener(`click`, () => {
+    let matches = 8;
+    for (let i = 1; i <= 4; i++) {
+        juegaFase(i, matches);
+        matches = matches / 2;
+    }
+})
+
+
+function juegaFase(ronda, matches) {
+    for (let i = 1; i <= matches; i++) {
+        txtMarcadorActual1 = document.querySelector(`#txtMarcador_e${ronda}-${i}-1`);
+        txtMarcadorActual1.value = marcadorAleatorio(0, 10);
+        txtMarcadorActual2 = document.querySelector(`#txtMarcador_e${ronda}-${i}-2`);
+        txtMarcadorActual2.value = marcadorAleatorio(0, 10);
+        if (txtMarcadorActual1.value == txtMarcadorActual2.value) {
+            txtMarcadorActual2.value = marcadorAleatorio(0, 10);
+        }
+        if (ronda < 4) {
+            document.querySelector(`#arr__e${ronda}-${i}`).click();
+        };
+    };
+};
